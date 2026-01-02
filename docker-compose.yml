@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: bookreco-db
+    environment:
+      POSTGRES_USER: bookreco
+      POSTGRES_PASSWORD: bookreco
+      POSTGRES_DB: bookreco
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
